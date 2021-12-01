@@ -2,8 +2,8 @@
   <header>
     <h1>BoolfliX</h1>
     <div>
-      <input type="text">
-      <button>Search</button>
+      <input type="text" placeholder="Search Movies" v-model="inputText">
+      <button @click.prevent="$emit('search', inputText)">Search</button>
     </div>
   </header>
 </template>
@@ -11,6 +11,11 @@
 <script>
 export default {
   name: 'Header',
+  data() {
+    return {
+      inputText: "",
+    }
+  }
 }
 </script>
 

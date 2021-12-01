@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header/>
+    <Header @search="searching"/>
 
     <Main/>
   </div>
@@ -15,6 +15,15 @@ export default {
   components: {
     Header,
     Main
+  },
+  data() {
+    return {
+      searchText: "",
+    }
+  },
+  searching(text) {
+    this.searchText = text;
+    console.log(searchText)
   }
 }
 </script>

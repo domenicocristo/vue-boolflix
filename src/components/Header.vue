@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>BoolfliX</h1>
+    <h1>BOOLFLIX</h1>
     <div>
       <input type="text" placeholder="Search Movies" v-model="inputText">
       <button @click.prevent="$emit('search', inputText)">Search</button>
@@ -27,8 +27,9 @@ header {
   align-items: center;
   background-color: #000;
   h1 {
-    color: red;
+    color: #d92027;
     margin-left: 50px;
+    font-size: 50px;
   }
   input {
     margin-right: 10px;

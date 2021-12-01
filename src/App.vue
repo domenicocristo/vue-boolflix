@@ -18,12 +18,15 @@ export default {
   },
   data() {
     return {
+      inputText: "",
       searchText: "",
     }
   },
-  searching(text) {
-    this.searchText = text;
-    console.log(searchText)
+  methods: {
+    searching(text) {
+      this.searchText = text;
+      console.log(this.searchText)
+    }
   }
 }
 </script>

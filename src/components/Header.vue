@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>BOOLFLIX</h1>
+    <img src="../assets/logo.png" alt="logo">
     <div>
       <input type="text" placeholder="Search Movies" v-model="inputText">
       <button @click.prevent="$emit('search', inputText)">Search</button>
@@ -26,17 +26,20 @@ header {
   justify-content: space-between;
   align-items: center;
   background-color: #000;
-  h1 {
-    color: #d92027;
+  img {
     margin-left: 50px;
-    font-size: 50px;
   }
   input {
-    margin-right: 10px;
+    padding: 10px 15px;
+    margin-right: 5px;
   }
   button {
     margin-right: 50px;
-    padding: 0 5px;
+    padding: 12px 15px;
+    color: #fff;
+    background-color: #e50914;
+    border: none;
+    border-radius: 2px;
     cursor: pointer;
   }
 }

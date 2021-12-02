@@ -2,7 +2,7 @@
   <div id="app">
     <Header @search="searching"/>
 
-    <Main/>
+    <Main :MovieList="MovieList"/>
   </div>
 </template>
 
@@ -19,6 +19,8 @@ export default {
   },
   data() {
     return {
+      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=3db9c7a2f859884185a1de6ddc97c03b&",
+      MoviesList: [],
       searchText: "",
     }
   },
@@ -31,14 +33,12 @@ export default {
     },
     getMovie() {
       axios
-      .get(this.apiUrl, {
-          api_key: "3db9c7a2f859884185a1de6ddc97c03b",
-          query: searchText,
-      })
+      .get(this.apiUrl + this.query + this.searchText)
       .then((result) => {
-          this.MoviesList = result.data.results;
+        this.MoviesList = result.data.results;
+        console.log()
       })
-    },
+    }
   }
 }
 </script>

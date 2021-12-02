@@ -12,12 +12,9 @@ export default {
   components: {
     Card,
   },
-  data() {
-    return {
-      apiUrl: "https://api.themoviedb.org/3/search/movie?",
-      MoviesList: [],
-    }
-  },
+  props: {
+      MovieList: String
+  }
 }
 </script>
 

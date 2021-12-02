@@ -19,21 +19,19 @@ export default {
   },
   data() {
     return {
-      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=3db9c7a2f859884185a1de6ddc97c03b&query=rocky",
+      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=3db9c7a2f859884185a1de6ddc97c03b&query=",
       MoviesList: [],
-      // searchText: "",
+      searchText: "",
     }
-  },
-  created() {
-    this.getMovie();
   },
   methods: {
     searching(text) {
       this.searchText = text;
+      this.getMovie();
     },
     getMovie() {
       axios
-      .get(this.apiUrl)
+      .get(this.apiUrl + this.searchText)
       .then((result) => {
         this.MoviesList = result.data.results;
       })
@@ -51,6 +49,6 @@ export default {
 }
 
 body {
-  background-color: #434343;
+  background-color: #111111;
 }
 </style>

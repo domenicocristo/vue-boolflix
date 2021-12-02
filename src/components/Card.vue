@@ -41,7 +41,6 @@ export default {
     cursor: pointer;
     h3 {
         color: #fff;
-        z-index: 1;
         span {
         color: #808080;
         font-size: 17px;

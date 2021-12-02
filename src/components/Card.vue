@@ -1,5 +1,6 @@
 <template>
   <div id="card">
+    <img :src="'https://image.tmdb.org/t/p/w342'+details.poster_path" alt="poster">
     <h3>Titolo: 
         <span>{{details.title}}</span>
     </h3>
@@ -9,7 +10,10 @@
     </h3>
 
     <h3>Lingua: 
-        <span>{{details.original_language}}</span>
+        <img v-if="details.original_language === 'it'" src="../assets/Italy.png" alt="logo">
+        <img v-else-if="details.original_language === 'en'" src="../assets/United-Kingdom.png" alt="logo">
+        <span v-else>{{details.original_language}}</span>
+
     </h3>
 
     <h3>Voto: 
@@ -29,18 +33,23 @@ export default {
 
 <style scoped lang="scss">
 #card {
-    width: 300px;
+    width: 344px;
     display: inline-block;
     background-color: #000;
     border: 1px solid #fff;
     margin: 10px;
-    padding: 10px;
+    cursor: pointer;
     h3 {
         color: #fff;
-    }
-    span {
+        z-index: 1;
+        span {
         color: #808080;
         font-size: 17px;
+        }
+        img {
+            height: 12px;
+            width: 20px;
+        }
     }
 }
 </style>

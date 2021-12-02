@@ -13,7 +13,7 @@ export default {
     Card,
   },
   props: {
-      MovieList: String
+      MoviesList: Array,
   }
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <main>
-      <Card v-for="movie, i in MoviesList" :key="i" :details="movie"/>
+      <Card v-for="card, i in MoviesList" :key="i" :details="card"/>
   </main>
 </template>
 
@@ -20,6 +20,8 @@ export default {
 
 <style scoped lang="scss">
 main {
-    padding: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;  
 }
 </style>

@@ -20,8 +20,8 @@ export default {
   data() {
     return {
       apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=3db9c7a2f859884185a1de6ddc97c03b&query=",
+      // apiUrl: "https://api.themoviedb.org/3/search/tv?api_key=3db9c7a2f859884185a1de6ddc97c03b&query=",
       MoviesList: [],
-      searchText: "",
     }
   },
   methods: {

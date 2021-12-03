@@ -2,7 +2,7 @@
   <div id="app">
     <Header @search="searching"/>
 
-    <Main :MoviesList="MoviesList"/>
+    <Main :MoviesList="MoviesList" :SeriesList="SeriesList"/>
   </div>
 </template>
 
@@ -19,9 +19,9 @@ export default {
   },
   data() {
     return {
-      apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=3db9c7a2f859884185a1de6ddc97c03b&query=",
+      baseUrl: "https://api.themoviedb.org/3/search/",
+      apiKey: "?api_key=3db9c7a2f859884185a1de6ddc97c03b",
       MoviesList: [],
-      apiUrl2: "https://api.themoviedb.org/3/search/tv?api_key=3db9c7a2f859884185a1de6ddc97c03b&query=",
       SeriesList: [],
     }
   },
@@ -33,16 +33,16 @@ export default {
     },
     getMovie() {
       axios
-      .get(this.apiUrl + this.searchText)
+      .get(this.baseUrl + 'movie' + this.apiKey + "&query=" + this.searchText)
       .then((result) => {
         this.MoviesList = result.data.results;
       })
     },
     getSerie() {
       axios
-      .get(this.apiUrl2 + this.searchText)
+      .get(this.baseUrl + 'tv' + this.apiKey + "&query=" + this.searchText)
       .then((result) => {
-        this.SeriessList = result.data.results;
+        this.SeriesList = result.data.results;
       })
     }
   }
@@ -50,7 +50,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import '~@fortawesome/fontawesome-free/css/all.min.css';
 
 * {
   margin: 0;

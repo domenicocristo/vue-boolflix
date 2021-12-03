@@ -17,7 +17,7 @@
         </h3>
 
         <h3>Voto: 
-            <span>{{details.vote_average/2}}</span>
+            <span id="vote">{{details.vote_average/2}}</span>
         </h3>
     </div>
     <img :src="'https://image.tmdb.org/t/p/w342'+details.poster_path" alt="poster">
@@ -66,6 +66,13 @@ export default {
             position: absolute;
             top: 7px;
             left: 70px;
+            }
+            #vote {
+                display: none;
+            }
+            #star {
+                color: yellow;
+                font-size: 20px;
             }
         }
     }

@@ -2,7 +2,7 @@
   <main>
       <CardsMovies v-for="movie, i in MoviesList" :key="i" :details="movie"/>
 
-      <CardsSeries v-for="serie, i in MoviesList" :key="i" :details="serie"/>
+      <CardsSeries v-for="serie, i in SeriesList" :key="i" :details="serie"/>
   </main>
 </template>
 
@@ -18,6 +18,7 @@ export default {
   },
   props: {
       MoviesList: Array,
+      SeriesList: Array,
   }
 }
 </script>

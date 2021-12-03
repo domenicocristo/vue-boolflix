@@ -18,6 +18,7 @@
 
         <h3>Voto: 
             <span id="vote">{{details.vote_average/2}}</span>
+            <font-awesome-icon v-for="" icon="star" class="checked" />
         </h3>
     </div>
     <img :src="'https://image.tmdb.org/t/p/w342'+details.poster_path" alt="poster">

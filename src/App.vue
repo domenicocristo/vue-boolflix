@@ -20,20 +20,29 @@ export default {
   data() {
     return {
       apiUrl: "https://api.themoviedb.org/3/search/movie?api_key=3db9c7a2f859884185a1de6ddc97c03b&query=",
-      // apiUrl: "https://api.themoviedb.org/3/search/tv?api_key=3db9c7a2f859884185a1de6ddc97c03b&query=",
       MoviesList: [],
+      apiUrl2: "https://api.themoviedb.org/3/search/tv?api_key=3db9c7a2f859884185a1de6ddc97c03b&query=",
+      SeriesList: [],
     }
   },
   methods: {
     searching(text) {
       this.searchText = text;
       this.getMovie();
+      this.getSerie();
     },
     getMovie() {
       axios
       .get(this.apiUrl + this.searchText)
       .then((result) => {
         this.MoviesList = result.data.results;
+      })
+    },
+    getSerie() {
+      axios
+      .get(this.apiUrl2 + this.searchText)
+      .then((result) => {
+        this.SeriessList = result.data.results;
       })
     }
   }

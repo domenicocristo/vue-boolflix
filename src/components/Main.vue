@@ -1,16 +1,20 @@
 <template>
   <main>
-      <Card v-for="card, i in MoviesList" :key="i" :details="card"/>
+      <CardsMovies v-for="movie, i in MoviesList" :key="i" :details="movie"/>
+
+      <CardsSeries v-for="serie, i in MoviesList" :key="i" :details="serie"/>
   </main>
 </template>
 
 <script>
-import Card from './Card.vue';
+import CardsMovies from './CardsMovies.vue';
+import CardsSeries from './CardsSeries.vue';
 
 export default {
   name: 'Main',
   components: {
-    Card,
+    CardsMovies,
+    CardsSeries,
   },
   props: {
       MoviesList: Array,

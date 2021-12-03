@@ -2,11 +2,11 @@
   <div class="card">
     <div class="textCard">
         <h3>Titolo: 
-            <span>{{details.title}}{{details.name}}</span>
+            <span>{{details.title}}</span>
         </h3>
 
         <h3>Titolo originale: 
-            <span>{{details.original_title}}{{details.original_name}}</span>
+            <span>{{details.original_title}}</span>
         </h3>
 
         <h3>Lingua:  
@@ -26,7 +26,7 @@
 
 <script>
 export default {
-  name: 'Card',
+  name: 'CardsMovies',
   props: {
       details: Object
   }

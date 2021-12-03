@@ -17,7 +17,7 @@
         </h3>
 
         <h3>Voto: 
-            <span>{{details.vote_average}}</span>
+            <span>{{details.vote_average/2}}</span>
         </h3>
     </div>
     <img :src="'https://image.tmdb.org/t/p/w342'+details.poster_path" alt="poster">
